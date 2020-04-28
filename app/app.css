@@ -1,0 +1,388 @@
+/************ COLORS ************/
+/*
+    white: #ffffff
+    black: #000000
+    blue: #006bfD
+    lightblue: #4a96ff
+    grey: #e9ecee
+    red: #d32f2f
+*/
+/********************************/
+
+/* START: CODE */
+
+:root {
+	--blue: #006bfD;
+    --lightblue: #4a96ff;
+    --grey: #e9ecee;
+    --red: #d32f2f;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+	font-family: "Open Sans", sans-serif;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.sidebar {
+	
+}
+
+.sidebar__logo img {
+	margin: 1rem 1.375rem 0;
+	width: 35px;
+	height: auto;
+}
+
+.sidebar__links a {
+	padding: 1rem 1.375rem;
+	font-weight: 700;
+    display: block;
+	color: #000000;
+    width: 100%;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-align: left;
+    overflow: hidden;
+    transition: .2s ease;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.sidebar__links a.active {
+	color: var(--blue);
+}
+
+.topbar {
+	
+}
+
+.topbar__header {
+	font-size: 2.187rem;
+	font-weight: bold;
+}
+
+.topbar__header a {
+	color: #000000;
+	position: relative;
+}
+
+.topbar__header a:before {
+	content: "";
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border-top: 3px solid #000000;
+	border-left: 3px solid #000000;
+	-webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+	margin-right: 25px;
+    margin-bottom: 4px;
+}
+
+.topbar__header a:after {
+	content: "";
+    display: inline-block;
+    width: 3px;
+    height: 15px;
+    background-color: black;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    left: 8px;
+    top: 18px;
+	position: absolute;
+}
+
+.topbar__nav a {
+	border: 3px solid #000000;
+	color: #000000;
+	border-radius: 1rem;
+	padding: .25rem 1.25rem;
+	font-size: 1rem;
+}
+
+.mandatory {
+	color: var(--red);
+	margin-left: .5rem
+}
+
+.user-form {
+	padding: 2rem;
+}
+
+.user-form input[type=text] {
+	width: 100%;
+	padding: .5rem 0;
+	border: none;
+	border-bottom: 2px solid #ddd;
+	margin-bottom: 2rem;
+	font-size: 1.2rem;
+}
+
+.user-form label {
+	font-size: .8rem;
+}
+
+@media (min-width: 831px) {
+	body {
+		padding-left: 150px;
+		padding-top: 60px;
+		min-height: 100vh;
+	}
+	
+	.sidebar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 13;
+		width: 150px;
+		min-height: 100%;
+		background: var(--grey);
+	}
+	
+	.topbar {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 150px;
+		height: 60px;
+		padding: 0 1.375rem;
+		border-bottom: 4px solid var(--grey);
+		background: #ffffff;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+
+/* = table
+------------------------*/
+.box-table table{
+	border-collapse:collapse;
+	text-align:left;
+	width:100%;
+	margin:0;
+	animation: responsive 5s infinite ease-in-out;
+}
+
+.box-table{
+	font:normal 12px;
+	overflow:hidden;
+	margin:0 auto;
+	display:block;
+}
+
+.box-table table thead th{
+	text-align:left;
+	font-weight: bold;
+	padding: 1em;
+	vertical-align: top;
+	border-bottom: 1px solid #ddd;
+}
+
+.box-table table tbody td,
+.box-table table tbody tr{
+	border-bottom: 1px solid #ddd;
+	font-size:1em;
+	padding: 1em 7em 1em 1em;
+}
+
+.box-table table tbody tr.selected td {
+	background-color: var(--grey);
+}
+
+.box-table .user-tumb{
+	width:6em;
+	height:6em;
+	padding:0;
+	display:table-cell;
+	text-align:center;
+	margin:0 auto;
+	-webkit-border-radius:100%;
+	-moz-border-radius:100%;
+	border-radius:100%;
+}
+
+/* = Responsive table
+------------------------*/
+@media only screen and (max-width: 800px){
+	.box-table table{
+		width:100%;
+		border-collapse:collapse;
+		border-spacing:0;
+	}
+
+	.box-table th,
+	.box-table td{
+		margin:0;
+		vertical-align:top;
+	}
+
+	.box-table th{
+		text-align:left;
+	}
+
+	.box-table table{
+		display:block;
+		position:relative;
+		width:100%;
+	}
+
+	.box-table thead{
+		display:block;
+		float:left;
+	}
+
+	.box-table tbody{
+		display:block;
+		width:auto;
+		position:relative;
+		overflow-x:auto;
+		white-space:nowrap;
+	}
+
+	.box-table thead tr{
+		display:block;
+	}
+
+	.box-table th{
+		display:block;
+		text-align:right;
+	}
+
+	.box-table tbody tr{
+		display:inline-block;
+		vertical-align:top;
+	}
+
+	.box-table td{
+		display:block;
+		min-height:1.25em;
+		text-align:left;
+	}
+
+	.box-table th{
+		border-bottom:0;
+		border-left:0;
+	}
+
+	.box-table td{
+		border-left:0;
+		border-right:0;
+		border-bottom:0;
+	}
+}
+
+/* = Error
+------------------------*/
+.error_table {
+	display: block;
+	background: #E05E5E;
+	color: #D1D1D1;
+	text-align: center;
+	font-size: 3em;
+	width: 90%;
+	padding: 5%;
+}
+
+/* = Loader
+------------------------*/
+.loader {
+	height: 5px;
+	width: 100%;
+}
+
+.loader .bar {
+	position: relative;
+	height: 5px;
+	background-color: dodgerblue;
+	animation-name: loader-animation;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+/* = Checkbox
+------------------------*/
+.pb-checkbox {
+    position: relative;
+    margin: 16px 0;
+    text-align: left;
+}
+
+.pb-checkbox input[type="checkbox"] {
+    outline: 0;
+    margin-right: 10px;
+    visibility: hidden;
+}
+
+.pb-checkbox label:before,
+.pb-checkbox label:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.pb-checkbox label:before {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.54);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.pb-checkbox input[type="checkbox"]:checked + label:before {
+    background: var(--lightblue);
+    border: none;
+}
+
+.pb-checkbox input[type="checkbox"]:checked + label:after {
+    transform: rotate(-45deg);
+    top: 5px;
+    left: 4px;
+    width: 12px;
+    height: 6px;
+    border: 2px solid #fff;
+    border-top-style: none;
+    border-right-style: none;
+}
+/* END: CODE */

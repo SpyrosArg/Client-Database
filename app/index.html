@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>APP</title>
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+        <!-- STYLE -->
+        <link href="app.css" rel="stylesheet">
+    </head>
+    <body>
+		<div id="app">
+			<!-- START: CODE -->
+			<header class="sidebar">
+				<h1 class="sidebar__logo">
+					<a id="welcome" href="javascript:">
+						<img src="logo.svg">
+					</a>
+				</h1>
+				<nav role="navigation">
+					<ul class="sidebar__links">
+						<li><a id="customers" href="javascript:">CUSTOMERS</a></li>
+						<li><a id="products" href="javascript:">PRODUCTS</a></li>
+						<li><a id="users" href="javascript:">USERS</a></li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<header class="topbar">
+					<h1 class="topbar__header">Welcome</h1>
+					<nav class="topbar__nav"></nav>
+				</header>
+				<section id="content"></section>
+			</main>
+			<!-- END: CODE -->
+		</div>
+		<!-- SCRIPT -->
+        <script src="app.js"></script>
+    </body>
+</html>
